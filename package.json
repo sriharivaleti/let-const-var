@@ -1,0 +1,32 @@
+{
+    "name": "javascript_lecture_two_data_structures",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "mdx-deck deck.mdx",
+        "build": "mdx-deck build deck.mdx",
+        "help": "mdx-deck",
+        "clean": "rm -rf public",
+        "lint:css": "stylelint './src/**/*.js'",
+        "lint": "eslint src",
+        "format": "npm run prettier -- --write",
+        "prettier": "prettier \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|graphql|mdx)\"",
+        "validate": "npm run lint && npm run prettier -- --list-different",
+        "precommit": "lint-staged"
+    },
+    "author": "Maria D. Campbell",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.8.3",
+        "babel-loader": "^8.0.6",
+        "file-loader": "^5.0.2",
+        "husky": "^4.2.0",
+        "lint-staged": "^10.0.2",
+        "mdx-deck": "^3.0.13",
+        "stylelint": "^13.0.0"
+    },
+    "resolutions": {
+        "terser": "4.1.2"
+    }
+}

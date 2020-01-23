@@ -1,0 +1,270 @@
+import {Head, Image, Appear, Notes} from 'mdx-deck'
+
+import {themes} from 'mdx-deck'
+
+export const theme = themes.code
+
+<Head>
+    <title>COMD 3663 Dynamic Web JavaScript Lecture 2 Data Structures</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+</Head>
+
+---
+
+<div style={{width: "90%"}}>
+    <h2>Table of Contents</h2>
+    <ol>
+        <li>
+            Declaring and Defining Variables: let vs const vs var
+        </li>
+        <li>
+            JavaScript Data Types: primitive data types and the Object  data type
+        </li>
+        <li>
+            Anonymous Arrow functions vs Named Functions vs Anonymous Functions
+        </li>
+        <li>
+            Named functions vs function expressions
+        </li>
+        <li>
+            Conditionals Contd: if, if/else, ternary operator, switch
+        </li>
+        <li>
+            Template Strings: multi-line strings, expressions, expression interpolation, nesting templates, tagged templates, raw strings, tagged templates and escape sequences
+        </li>
+        <li>
+            Manipulating the DOM: Creating elements, setting attributes, getting elements
+        </li>
+        <li>
+            Manipulating The DOM: textContent vs innerHTML
+        </li>
+        <li>A peak at loops (to be expanded upon and continued in Lecture 3): for loops, for in loops, for of loops, do while loop, while loop</li>
+    </ol>
+</div>
+
+---
+
+<div style={{width: "90%"}}>
+    <h2>Declaring and Defining Variables: var</h2>
+    <p>
+        The var statement declares a variable, OPTIONALLY initializing it to a value. You don't have to immediately assigna value to a  var (or let) variable. Uninitialized declaration of var:
+    </p>
+    <code>var str</code>
+    <p>Initialized variable using var:</p>
+    <code>var str = 'Hello, world!'</code>
+    <p>Syntax:</p>
+    <code>var name1 = value1</code>
+</div>
+
+---
+
+<div style={{width: "90%"}}>
+    <h2> var Declarations</h2>
+    <p>
+        <code>var</code> <i>declarations</i>, wherever they occur, are processed before any code is executed. This is called <code>hoisting</code>.
+    </p>
+</div>
+
+---
+
+<div style={{width: "90%"}}>
+    <h2>Variable Scope</h2>
+    <ol>
+        <li>
+            A variable is either in the <code>local scope</code>, within the body of a function, or in the <code>global scope</code>, outside of a function and available everywhere in the application.
+        </li>
+        <li>
+            Unless you need a variable to be available everywhere in an application, it is always preferrable to declare and initialize it in the local scope.
+        </li>
+    </ol>
+    <Notes style={{color: "#fff"}}>
+        Show examples of local and global scopes using var in the JS playground.
+    </Notes>
+</div>
+
+---
+
+<div style={{width: "90%"}}>
+    <h2>Assigning Values to Undeclared Variables</h2>
+    <p>
+        Assigning values to undeclared variables implicitly makes them global variables. Because it makes them global variables, and because developers might not realize that they exist as such (i.e., they inadvertently ommitted var), undeclared variables can result in <code>global variable leaks</code>. This can cause unpredicatable code behavior, adn the undeclared variables can be very hard to track down.
+    </p>
+</div>
+
+---
+
+<div style={{width: "90%"}}>
+    <h2>var hoisting</h2>
+    <p>
+        Now I'll an example of hoisting in the <code>JS Playground</code> I have created.
+    </p>
+    <Notes>
+        Show an example of hoisting in playground. Show undefined then declared and assigned and then undefined, declared, and then assigned.
+    </Notes>
+</div>
+
+---
+
+<div style={{width: "90%"}}>
+    <h2>Explicit Strict Mode</h2>
+    <p>
+        With ES5, whcih was introduced in 2009, the concept of strict mode was introduced.
+    </p>
+    <p>
+        <b>"strict mode"</b> was introduced in response to JavaScript's <i>lenience</i> and and acceptance of sloppy or incorrect code, such as undeclared global variables. It was not recognized by all browsers, however, so cross-browser compatibility testing was necessary. On the other hand, normal code and code in strict mode could co-exist, so that was not a problem. These days, evern though Javascript is being compiled down to ES5 for cross-browsser compatibility, we are already entering ECMAScript 2020. Pretty much all developers have embraced ECMAScript 2015 (ES6) and beyond.
+    </p>
+</div>
+
+---
+
+<div style={{width: "90%"}}>
+    <h2>let and const</h2>
+    <p>
+        In response to var's "sloppiness", ES6 introduced <code>let</code> and <code>const</code>.
+    </p>
+</div>
+
+---
+
+<div style={{width: "90%"}}>
+    <h2>let</h2>
+    <p>
+        <code>let</code> is really neat. the <code>let</code> statement declares a block scope local variable, optionally (immediately) initializing it to a value.
+    </p>
+    Syntax:<br/>
+    <code>let variable1 = value1;</code><br/>
+    <code>variable1</code>: the name of the variable that is being declared. Each character of the name must be a legal JavaScript identifier.<br/>
+    <code>value1</code>: with the <i>declaration</i> of the variable, you may optionally <i>immediately</i> specifiy its initial value to any legal JavaScript expression.
+    <Notes style={{color: "#fff"}}>
+        Show let in action in the playground. Then show what would happen with var if done the same way.
+    </Notes>
+</div>
+
+---
+
+<div style={{width: "90%"}}>
+    <h2>Legal JavaScript Identifiers in Naming Variables</h2>
+    <p>
+        According to Mathias Byens, member of the ECMAScript technical committee TC39, which oversees which oversees the evolution of the Ecma262 standard (in other words, JavaScript), states on his blog in a post entitled <a href="https://mathiasbynens.be/notes/javascript-identifiers-es6" target="_blank">Valid JavaScript variable names in ES2015</a>:
+        <blockquote>
+            ES2015 updates the grammar for identifiers.
+        </blockquote>
+    </p>
+    <p>
+        He gets into great detail about what identifiers (characters) can be used in naming variables, most of which you can ignore for this class. BUT he does provide a very helpful tool in this post (I have included the link to it in the Related Resources section at the end of this lecture). It is a variable name validator! There are a whole bunch of other really cool validator tools included there which we probably will revisit when appropriate.
+    </p>
+    <Notes style={{color: "#fff"}}>
+        Got to Mathias' blog post and do a demonstration of how the validator works. <a href="https://mathiasbynens.be/notes/javascript-identifiers-es6" target="_blank">Valid JavaScript variable names in ES2015</a>
+    </Notes>
+</div>
+
+---
+
+<div style={{width: "90%"}}>
+    <h2>let vs var: recap</h2>
+    <ol>
+        <li>
+            <code>let</code> allows you to declare variables <i>limited</i> to the <code>local scope</code> of a <code>block statement</code> (or expression on which it is used, and we'll talk about that when we get to expressions!), but the <code>var</code> <b>keyword</b> declares variables <i>globally</i> or <i>locally</i> to a whole function, <i>ignoring</i> block scope.
+        </li>
+        <li>
+            Unlike <code>var</code>, which is <i>immediately</i> <b>initialized</b> to a value, <code>let</code> is <i>initialized</i> to a value <b>only when</b> a <b>parser</b> evaluates it.
+        </li>
+        <li>
+            Unlike <code>var</code>, let does not create properties of the <code>Window object</code> when declared <i>globally</i>. We'll be getting into the Window object later in the course. Two such properties are <code>localStorage</code> and <code>sessionStorage</code>, for example.
+        </li>
+        <li>let cannot be re-declared.</li>
+    </ol>
+</div>
+
+---
+
+<div style={{width: "90%"}}>
+    <h2>Why the keyword name let was chosen</h2>
+    <p>
+        The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let" target="_blank">MDN</a> docs on <code>let</code> link to an in-depth explanation of the reason the keyword name <code>let</code> was chosen. It is on stackoverflow, and states the following:
+    </p>
+    <blockquote>
+        Let is a mathematical statement that was adopted by early programming languages like Scheme and Basic. Variables are considered low level entities not suitable for higher levels of abstraction, thus the desire of many language designers to introduce similar but more powerful concepts like in Clojure, F#, Scala, where let might mean a value, or a variable that can be assigned, but not changed, which in turn lets the compiler catch more programming errors and optimize code better.<br/>
+        <br/>
+        JavaScript has had var from the beginning, so they just needed another keyword, and just borrowed from dozens of other languages that use let already as a traditional keyword as close to var as possible, although in JavaScript let creates block scope local variable instead.
+    </blockquote>
+</div>
+
+---
+
+<div style={{width: "90%"}}>
+    <h2>const</h2>
+    <p>
+        <code>const</code> was introduced in ES6, and is very different from <code>var</code>. const works like what its keyword name sounds like. Teh value assigned to it is <i><b>read only</b></i>. It cannot be re-assigned a value as with let and var. <code>let</code> and <code>var</code> allow you to <i><b>re-assign</b></i> <b>values</b> to them. <code>const</code> does not.
+    </p>
+    <Notes style={{color: "#fff"}}>
+        Show an example of const in action in the playground.
+    </Notes>
+</div>
+
+---
+
+<div style={{width: "90%"}}>
+    <h2>const Syntax</h2>
+    <p>
+        Like let, const is block scoped, can't be changed through re-assignment, and can't be re-declared.
+    </p>
+    <code>const name1 = value1;</code><br/>
+    <code>name1</code>: the name of the constant, which can be any legal identifier.<br/>
+    <code>value1</code>: the value of the constant, which can be any <code>legal expression</code>, including a <code>function expression</code>.
+</div>
+
+---
+
+<div style={{width: "90%"}}>
+    <h2>const in Detail</h2>
+    <ol>
+        <li>
+            const declaration creates a constant whose scope can be global or local blocked, depending on where it is placed.
+        </li>
+        <li>
+            Global consts do NOT become properties of the Window object, as with <code>var</code> variables.
+        </li>
+        <li>
+            An initializer is required when declaring a const. In other words, you can't do <code>const name; name="Maria";</code>. You have to immediately assign a value to the const <code>name</code>. So <code>const name = "Maria";</code> instead.
+        </li>
+        <li>
+            const declaration is read only. It creates a read-only reference to the value. This does NOT mean that the value which is assigned to it is immutable, unchangeable. It just means that the <code>variable identifier</code> <i>cannot be</i> <code>re-assigned</code>. The <code>value</code> can change, just the <code>structure</code> of the value cannot.
+        </li>
+    </ol>
+    <Notes style={{color: "#fff"}}>
+        Leave the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone" target="_blank">temporal dead zone</a> for another time when appropriate.
+    </Notes>
+</div>
+
+---
+
+<div style={{width: "90%"}}>
+    <h2>Related Resources</h2>
+    <ul>
+        <li>
+            <a href="https://tc39.es/">TC39: Specifying JavaScript</a>
+        </li>
+        <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">Strict Mode</a>: <b>MDN</b>
+        </li>
+        <li>
+            <a href="https://mathiasbynens.be/notes/javascript-identifiers-es6">Valid JavaScript variable names in ES2015</a>: <b>mathias bynens</b>
+        </li>
+        <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var">var</a>: <b>MDN</b>
+        </li>
+        <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">let</a>: <b>MDN</b>
+        </li>
+        <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const">const</a>: <b>MDN</b>
+        </li>
+        <li>
+            <a href="https://stackoverflow.com/questions/37916940/why-was-the-name-let-chosen-for-block-scoped-variable-declarations-in-javascri">Why was the name 'let' chosen for block-scoped variable declarations in JavaScript?</a>: <b>stackoverflow</b>
+        </li>
+    </ul>
+</div>
