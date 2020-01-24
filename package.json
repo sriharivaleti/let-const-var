@@ -1,5 +1,6 @@
 {
     "name": "javascript_lecture_two_data_structures",
+    "private": true,
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -8,9 +9,10 @@
         "build": "mdx-deck build deck.mdx",
         "help": "mdx-deck",
         "clean": "rm -rf public",
-        "lint:css": "stylelint './src/**/*.js'",
-        "lint": "eslint src",
+        "lint:css": "stylelint './*.js'",
+        "lint": "eslint",
         "format": "npm run prettier -- --write",
+        "check": "prettier --check",
         "prettier": "prettier \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|graphql|mdx)\"",
         "validate": "npm run lint && npm run prettier -- --list-different",
         "precommit": "lint-staged"
@@ -19,6 +21,7 @@
     "license": "ISC",
     "devDependencies": {
         "@babel/core": "^7.8.3",
+        "babel-eslint": "^10.0.3",
         "babel-loader": "^8.0.6",
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.9.0",
@@ -28,9 +31,28 @@
         "husky": "^4.2.0",
         "lint-staged": "^10.0.2",
         "mdx-deck": "^3.0.13",
+        "prettier": "^1.19.1",
+        "prettier-eslint": "^9.0.1",
         "stylelint": "^13.0.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,json}": [
+            "eslint"
+        ],
+        "*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|graphql|mdx)": [
+            "prettier --write",
+            "git add"
+        ]
     },
     "resolutions": {
         "terser": "4.1.2"
+    },
+    "dependencies": {
+        "terser": "^4.6.3"
     }
 }

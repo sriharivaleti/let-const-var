@@ -1,0 +1,30 @@
+{
+    "env": {
+        "commonjs": true,
+        "browser": true,
+        "es6": true,
+        "node": true,
+        "serviceworker": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "rules": {
+        "linebreak-style": ["off", "eol-last"],
+        "no-unused-vars": 0,
+        "no-console": 0,
+        "max-len": [
+            1,
+            120,
+            2,
+            {
+                "ignoreComments": true
+            }
+        ],
+        "indent": [0],
+        "linebreak-style": ["error", "unix"],
+        "quotes": ["off"],
+        "semi": ["off"]
+    }
+}
