@@ -8,7 +8,7 @@
         "start": "mdx-deck deck.mdx",
         "build": "mdx-deck build deck.mdx",
         "help": "mdx-deck",
-        "clean": "rm -rf public",
+        "clean": "rm -rf public && mkdir public",
         "lint:css": "stylelint './*.js'",
         "lint": "eslint",
         "format": "npm run prettier -- --write",
