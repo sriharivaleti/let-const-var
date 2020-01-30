@@ -5,7 +5,7 @@ import {themes} from 'mdx-deck';
 export const theme = themes.code;
 
 <Head>
-    <title>COMD 3663 Dynamic Web 1 Week 2 let const var</title>
+    <title>COMD 3663 Dynamic Web 1: let const var</title>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
 </Head>
 
@@ -13,25 +13,7 @@ export const theme = themes.code;
 
 <div style={{width: '90%'}}>
     <h1>COMD 3663 Dynamic Web 1</h1>
-    <h2>Week 2 let const var</h2>
-</div>
-
----
-
-<div style={{width: '90%'}}>
-    <h2>COMD3663 Dynamic Web 1 Week Two</h2>
-    <h3>Table of Contents</h3>
-    <ol>
-        <li>Declaring and Defining Variables: let vs const vs var</li>
-        <li>JavaScript Data Types: primitive data types and the Object  data type</li>
-        <li>Named functions vs function expressions</li>
-        <li>Anonymous Arrow functions vs Named Functions vs Anonymous Functions</li>
-        <li>JavaScript Events, Event Listeners and Event Handling</li>
-        <li>Conditionals Contd: if, if/else, ternary operator, switch</li>
-        <li>Template Strings: multi-line strings, expressions, expression interpolation, nesting templates, tagged templates, raw strings, tagged templates and escape sequences</li>
-        <li>Manipulating the DOM: Creating elements, setting attributes, getting elements</li>
-        <li>Manipulating The DOM: textContent vs innerHTML</li>
-    </ol>
+    <h2 class="lowercase">let const var</h2>
 </div>
 
 ---
@@ -53,7 +35,7 @@ export const theme = themes.code;
 <div style={{width: "90%"}}>
     <h2> var Declarations</h2>
     <p>
-        <code style={{color: "#cc0487"}}>var</code> <i>declarations</i>, wherever they occur, are processed before any code is executed. This is called <code style={{color: "#cc0487"}}>hoisting</code>.
+        <code style={{color: "#cc0487"}}>var</code> <em>declarations</em>, wherever they occur, are processed before any code is executed. This is called <code style={{color: "#cc0487"}}>hoisting</code>.
     </p>
 </div>
 
@@ -103,7 +85,7 @@ export const theme = themes.code;
         With ES5, which was introduced in 2009, the concept of <code style={{color: "#cc0487"}}>strict mode</code> was introduced.
     </p>
     <p>
-        <code style={{color: "#cc0487"}}>"strict mode"</code> was introduced in response to JavaScript's <i>lenience</i> and and acceptance of sloppy or incorrect code, such as <em>undeclared</em> global variables. It was not recognized by all browsers, however, so <code style={{color: "#cc0487"}}>cross-browser compatibility</code> <em>testing</em> was necessary. On the other hand, normal code and code in strict mode could co-exist, so that was not a problem. These days, even though Javascript is being compiled down to ES5 for <code style={{color: "#cc0487"}}>cross-browser compatibility</code>, we are already entering ECMAScript 2020. Pretty much all developers have embraced ECMAScript 2015 (ES6) and beyond.
+        <code style={{color: "#cc0487"}}>"strict mode"</code> was introduced in response to JavaScript's <em>lenience</em> and and acceptance of sloppy or incorrect code, such as <em>undeclared</em> global variables. It was not recognized by all browsers, however, so <code style={{color: "#cc0487"}}>cross-browser compatibility</code> <em>testing</em> was necessary. On the other hand, normal code and code in strict mode could co-exist, so that was not a problem. These days, even though Javascript is being compiled down to ES5 for <code style={{color: "#cc0487"}}>cross-browser compatibility</code>, we are already entering ECMAScript 2020. Pretty much all developers have embraced ECMAScript 2015 (ES6) and beyond.
     </p>
 </div>
 
@@ -126,7 +108,7 @@ export const theme = themes.code;
     <p>Syntax:</p>
     <code style={{color: "#cc0487"}}>let variable1 = value1;</code><br/>
     <code style={{color: "#cc0487"}}>variable1</code>: the name of the variable that is being declared. Each character of the name must be a legal JavaScript identifier.<br/>
-    <code style={{color: "#cc0487"}}>value1</code>: with the <i>declaration</i> of the variable, you may optionally <i>immediately</i> specify its initial value to any legal JavaScript expression.
+    <code style={{color: "#cc0487"}}>value1</code>: with the <em>declaration</em> of the variable, you may optionally <em>immediately</em> specify its initial value to any legal JavaScript expression.
     <Notes style={{color: "#fff"}}>
         Show let in action in the playground. Then show what would happen with var if done the same way.
     </Notes>
@@ -156,13 +138,13 @@ export const theme = themes.code;
     <h2>let vs var: recap</h2>
     <ol>
         <li>
-            <code style={{color: "#cc0487"}}>let</code> allows you to declare variables <i>limited</i> to the <code style={{color: "#cc0487"}}>local scope</code> of a <code style={{color: "#cc0487"}}>block statement</code> (or expression on which it is used, and we'll talk about that when we get to expressions!), but the <code style={{color: "#cc0487"}}>var</code> <b>keyword</b> declares variables <i>globally</i> or <i>locally</i> to a whole function, <i>ignoring</i> block scope.
+            <code style={{color: "#cc0487"}}>let</code> allows you to declare variables <em>limited</em> to the <code style={{color: "#cc0487"}}>local scope</code> of a <code style={{color: "#cc0487"}}>block statement</code> (or expression on which it is used, and we'll talk about that when we get to expressions!), but the <code style={{color: "#cc0487"}}>var</code> <b>keyword</b> declares variables <em>globally</em> or <em>locally</em> to a whole function, <em>ignoring</em> block scope.
         </li>
         <li>
-            Unlike <code style={{color: "#cc0487"}}>var</code>, which is <i>immediately</i> <b>initialized</b> to a value, <code style={{color: "#cc0487"}}>let</code> is <i>initialized</i> to a value <b>only when</b> a <b>parser</b> evaluates it.
+            Unlike <code style={{color: "#cc0487"}}>var</code>, which is <em>immediately</em> <strong>initialized</strong> to a value, <code style={{color: "#cc0487"}}>let</code> is <em>initialized</em> to a value <strong>only when</strong> a <strong>parser</strong> evaluates it.
         </li>
         <li>
-            Unlike <code style={{color: "#cc0487"}}>var</code>, let does not create properties of the <code style={{color: "#cc0487"}}>Window object</code> when declared <i>globally</i>. We'll be getting into the Window object later in the course. Two such properties are <code style={{color: "#cc0487"}}>localStorage</code> and <code style={{color: "#cc0487"}}>sessionStorage</code>, for example.
+            Unlike <code style={{color: "#cc0487"}}>var</code>, let does not create properties of the <code style={{color: "#cc0487"}}>Window object</code> when declared <em>globally</em>. We'll be getting into the Window object later in the course. Two such properties are <code style={{color: "#cc0487"}}>localStorage</code> and <code style={{color: "#cc0487"}}>sessionStorage</code>, for example.
         </li>
         <li><code style={{color: "#cc0487"}}>let</code> cannot be re-declared. On the other hand, <code style={{color: "#cc0487"}}>var</code> <a href="https://stackoverflow.com/questions/6888506/redeclaring-a-javascript-variable" target="_blank">can</a>.</li>
     </ol>
@@ -187,7 +169,7 @@ export const theme = themes.code;
 <div style={{width: "90%"}}>
     <h2>const</h2>
     <p>
-        <code style={{color: "#cc0487"}}>const</code> was introduced in <code style={{color: "#cc0487"}}>ES6</code>, and is very different from <code style={{color: "#cc0487"}}>var</code>. <code style={{color: "#cc0487"}}>const</code> works like what its keyword name sounds like. The value assigned to it is <i><b>read only</b></i>. It cannot be re-assigned a value as with let and var. <code style={{color: "#cc0487"}}>let</code> and <code style={{color: "#cc0487"}}>var</code> allow you to <i><b>re-assign</b></i> <b>values</b> to them. <code style={{color: "#cc0487"}}>const</code> does not.
+        <code style={{color: "#cc0487"}}>const</code> was introduced in <code style={{color: "#cc0487"}}>ES6</code>, and is very different from <code style={{color: "#cc0487"}}>var</code>. <code style={{color: "#cc0487"}}>const</code> works like what its keyword name sounds like. The value assigned to it is <em><strong>read only</strong></em>. It cannot be re-assigned a value as with let and var. <code style={{color: "#cc0487"}}>let</code> and <code style={{color: "#cc0487"}}>var</code> allow you to <em><strong>re-assign</strong></em> <strong>values</strong> to them. <code style={{color: "#cc0487"}}>const</code> does not.
     </p>
     <Notes style={{color: "#fff"}}>
         Show an example of const in action in the playground.
@@ -222,7 +204,7 @@ export const theme = themes.code;
             An initializer is required when declaring a <code style={{color: "#cc0487"}}>const</code>. In other words, you can't do <code style={{color: "#cc0487"}}>const name; name="Maria";</code>. You have to immediately assign a value to the const <code style={{color: "#cc0487"}}>name</code>. So <code style={{color: "#cc0487"}}>const name = "Maria";</code> instead.
         </li>
         <li>
-            <code style={{color: "#cc0487"}}>const</code> declaration is read only. It creates a read-only reference to the value. This does NOT mean that the value which is assigned to it is immutable, unchangeable. It just means that the <code style={{color: "#cc0487"}}>variable identifier</code> <i>cannot be</i> <code style={{color: "#cc0487"}}>re-assigned</code>. The <code style={{color: "#cc0487"}}>value</code> can change, just the <code style={{color: "#cc0487"}}>structure</code> of the value cannot.
+            <code style={{color: "#cc0487"}}>const</code> declaration is read only. It creates a read-only reference to the value. This does NOT mean that the value which is assigned to it is immutable, unchangeable. It just means that the <code style={{color: "#cc0487"}}>variable identifier</code> <em>cannot be</em> <code style={{color: "#cc0487"}}>re-assigned</code>. The <code style={{color: "#cc0487"}}>value</code> can change, just the <code style={{color: "#cc0487"}}>structure</code> of the value cannot.
         </li>
     </ol>
     <Notes style={{color: "#fff"}}>
@@ -239,22 +221,22 @@ export const theme = themes.code;
             <a href="https://tc39.es/">TC39: Specifying JavaScript</a>
         </li>
         <li>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">Strict Mode</a>: <b>MDN</b>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">Strict Mode</a>: <strong>MDN</strong>
         </li>
         <li>
-            <a href="https://mathiasbynens.be/notes/javascript-identifiers-es6">Valid JavaScript variable names in ES2015</a>: <b>mathias bynens</b>
+            <a href="https://mathiasbynens.be/notes/javascript-identifiers-es6">Valid JavaScript variable names in ES2015</a>: <strong>mathias bynens</strong>
         </li>
         <li>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var">var</a>: <b>MDN</b>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var">var</a>: <strong>MDN</strong>
         </li>
         <li>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">let</a>: <b>MDN</b>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">let</a>: <strong>MDN</strong>
         </li>
         <li>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const">const</a>: <b>MDN</b>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const">const</a>: <strong>MDN</strong>
         </li>
         <li>
-            <a href="https://stackoverflow.com/questions/37916940/why-was-the-name-let-chosen-for-block-scoped-variable-declarations-in-javascri">Why was the name 'let' chosen for block-scoped variable declarations in JavaScript?</a>: <b>stackoverflow</b>
+            <a href="https://stackoverflow.com/questions/37916940/why-was-the-name-let-chosen-for-block-scoped-variable-declarations-in-javascri">Why was the name 'let' chosen for block-scoped variable declarations in JavaScript?</a>: <strong>stackoverflow</strong>
         </li>
         <li><a href="https://stackoverflow.com/questions/6888506/redeclaring-a-javascript-variable">Redeclaring a javascript variable</a>: <strong>stackoverflow</strong></li>
     </ul>
