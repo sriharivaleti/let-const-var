@@ -19,12 +19,12 @@ export const theme = themes.code;
 ---
 
 <div style={{width: "90%"}}>
-    <h2>Declaring and Defining Variables: var</h2>
+    <h2>Declaring and Defining Variables: <code style={{color: "#cc0487"}}>var</code></h2>
     <p>
-        The var statement declares a variable, OPTIONALLY initializing it to a value. You don't have to immediately assign a value to a  var (or let) variable. Uninitialized declaration of var:
+        The <code style={{color: "#cc0487"}}>var</code> statement declares a variable, OPTIONALLY initializing it to a value. You don't have to immediately assign a value to a <code style={{color: "#cc0487"}}>var</code> (or <code style={{color: "#cc0487"}}>let</code>) variable. Uninitialized declaration of <code style={{color: "#cc0487"}}>var</code>:
     </p>
     <code style={{color: "#cc0487"}}>var str</code>
-    <p>Initialized variable using var:</p>
+    <p>Initialized variable using <code style={{color: "#cc0487"}}>var</code>:</p>
     <code style={{color: "#cc0487"}}>var str = 'Hello, world!'</code>
     <p>Syntax:</p>
     <code style={{color: "#cc0487"}}>var name1 = value1</code>
@@ -33,7 +33,7 @@ export const theme = themes.code;
 ---
 
 <div style={{width: "90%"}}>
-    <h2> var Declarations</h2>
+    <h2><code style={{color: "#cc0487"}}>var</code> Declarations</h2>
     <p>
         <code style={{color: "#cc0487"}}>var</code> <em>declarations</em>, wherever they occur, are processed before any code is executed. This is called <code style={{color: "#cc0487"}}>hoisting</code>.
     </p>
@@ -45,10 +45,10 @@ export const theme = themes.code;
     <h2>Variable Scope</h2>
     <ol>
         <li>
-            A variable is either in the <code style={{color: "#cc0487"}}>local scope</code>, within the body of a function, or in the <code style={{color: "#cc0487"}}>global scope</code>, outside of a function and available everywhere in the application.
+            A <code>variable</code> is either in the <code style={{color: "#cc0487"}}>local scope</code>, within the body of a function, or in the <code style={{color: "#cc0487"}}>global scope</code>, outside of a function and available everywhere in the application.
         </li>
         <li>
-            Unless you need a variable to be available everywhere in an application, it is always preferrable to declare and initialize it in the local scope.
+            Unless you need a variable to be available everywhere in an application, it is always <em>preferrable</em> to <strong>declare</strong> and initialize it in the <code style={{color: "#cc0487"}}>local scope</code>.
         </li>
     </ol>
     <Notes style={{color: "#fff"}}>
@@ -61,7 +61,7 @@ export const theme = themes.code;
 <div style={{width: "90%"}}>
     <h2>Assigning Values to Undeclared Variables</h2>
     <p>
-        Assigning values to undeclared variables implicitly makes them global variables. Because it makes them global variables, and because developers might not realize that they exist as such (i.e., they inadvertently ommitted var), undeclared variables can result in <code style={{color: "#cc0487"}}>global variable leaks</code>. This can cause unpredicatable code behavior, and the undeclared variables can be very hard to track down.
+        Assigning values to undeclared variables <em>implicitly</em> makes them <code>global variables</code>. Because it makes them <code style={{color: "#cc0487"}}>global variables</code>, and because developers might not realize that they exist as such (i.e., they inadvertently ommitted <code style={{color: "#cc0487"}}>var</code>), undeclared variables can result in <code style={{color: "#cc0487"}}>global variable leaks</code>. This can cause unpredicatable code behavior, and the undeclared variables can be very hard to track down.
     </p>
 </div>
 
@@ -70,7 +70,7 @@ export const theme = themes.code;
 <div style={{width: "90%"}}>
     <h2>var hoisting</h2>
     <p>
-        Now I'll an example of hoisting in the <code style={{color: "#cc0487"}}>JS Playground</code> I have created.
+        Now I'll give an example of hoisting in the <code style={{color: "#cc0487"}}>JS Playground</code> I have created.
     </p>
     <Notes>
         Show an example of hoisting in playground. Show undefined then declared and assigned and then undefined, declared, and then assigned.
@@ -82,10 +82,10 @@ export const theme = themes.code;
 <div style={{width: "90%"}}>
     <h2>Explicit Strict Mode</h2>
     <p>
-        With ES5, which was introduced in 2009, the concept of <code style={{color: "#cc0487"}}>strict mode</code> was introduced.
+        With <code style={{color: "#cc0487"}}>ES5</code>, which was introduced in <code style={{color: "#cc0487"}}>2009</code>, the concept of <code style={{color: "#cc0487"}}>strict mode</code> was introduced.
     </p>
     <p>
-        <code style={{color: "#cc0487"}}>"strict mode"</code> was introduced in response to JavaScript's <em>lenience</em> and and acceptance of sloppy or incorrect code, such as <em>undeclared</em> global variables. It was not recognized by all browsers, however, so <code style={{color: "#cc0487"}}>cross-browser compatibility</code> <em>testing</em> was necessary. On the other hand, normal code and code in strict mode could co-exist, so that was not a problem. These days, even though Javascript is being compiled down to ES5 for <code style={{color: "#cc0487"}}>cross-browser compatibility</code>, we are already entering ECMAScript 2020. Pretty much all developers have embraced ECMAScript 2015 (ES6) and beyond.
+        <code style={{color: "#cc0487"}}>"strict mode"</code> was introduced in response to JavaScript's <em>lenience</em> and and acceptance of sloppy or incorrect code, such as <em>undeclared</em> <code style={{color: "#cc0487"}}>global variables</code>. It was not recognized by all browsers, however, so <code style={{color: "#cc0487"}}>cross-browser compatibility</code> <em>testing</em> was necessary. On the other hand, <code>normal</code> code and code in <code>strict mode</code> could co-exist, so that was not a problem. These days, even though Javascript is being <code style={{color: "#cc0487"}}>compiled down</code> to <code>ES5</code> for <code style={{color: "#cc0487"}}>cross-browser compatibility</code>, we are already entering <code style={{color: "#cc0487"}}>ECMAScript 2020</code>. Pretty much all developers have embraced <code style={{color: "#cc0487"}}>ECMAScript 2015</code> (ES6) and beyond.
     </p>
 </div>
 
@@ -94,7 +94,7 @@ export const theme = themes.code;
 <div style={{width: "90%"}}>
     <h2>let and const</h2>
     <p>
-        In response to var's "sloppiness", ES6 introduced <code style={{color: "#cc0487"}}>let</code> and <code style={{color: "#cc0487"}}>const</code>.
+        In response to <code style={{color: "#cc0487"}}>var</code>'s "sloppiness", <code>ES6</code> introduced <code style={{color: "#cc0487"}}>let</code> and <code style={{color: "#cc0487"}}>const</code>.
     </p>
 </div>
 
@@ -107,7 +107,7 @@ export const theme = themes.code;
     </p>
     <p>Syntax:</p>
     <code style={{color: "#cc0487"}}>let variable1 = value1;</code><br/>
-    <code style={{color: "#cc0487"}}>variable1</code>: the name of the variable that is being declared. Each character of the name must be a legal JavaScript identifier.<br/>
+    <code style={{color: "#cc0487"}}>variable1</code>: the name of the variable that is being declared. Each character of the name must be a <em>legal</em> JavaScript <code>identifier</code>.<br/>
     <code style={{color: "#cc0487"}}>value1</code>: with the <em>declaration</em> of the variable, you may optionally <em>immediately</em> specify its initial value to any legal JavaScript expression.
     <Notes style={{color: "#fff"}}>
         Show let in action in the playground. Then show what would happen with var if done the same way.
@@ -119,16 +119,16 @@ export const theme = themes.code;
 <div style={{width: "90%"}}>
     <h2>Legal JavaScript Identifiers in Naming Variables</h2>
     <p>
-        According to Mathias Byens, member of the ECMAScript technical committee TC39, which oversees the evolution of the Ecma262 standard (in other words, JavaScript), states on his blog in a post entitled <a href="https://mathiasbynens.be/notes/javascript-identifiers-es6" target="_blank">Valid JavaScript variable names in ES2015</a>:
+        According to <code style={{color: "#cc0487"}}>Mathias Byens</code>, member of the ECMAScript technical committee <code style={{color: "#cc0487"}}>TC39</code>, which oversees the evolution of the <code style={{color: "#cc0487"}}>Ecma262 standard</code> (in other words, JavaScript), states on his blog in a post entitled <a href="https://mathiasbynens.be/notes/javascript-identifiers-es6" target="_blank">Valid JavaScript variable names in ES2015</a>:
         <blockquote>
             ES2015 updates the grammar for identifiers.
         </blockquote>
     </p>
     <p>
-        He gets into great detail about what identifiers (characters) can be used in naming variables, most of which you can ignore for this class. BUT he does provide a very helpful tool in this post (I have included the <em>link</em> to it in the <strong>Related Resources</strong> section at the end of this lecture). It is a <code style={{color: "#cc0487"}}>variable name validator</code>! There are a whole bunch of other really cool validator tools included there which we probably will revisit when appropriate.
+        He gets into great detail about what identifiers (characters) can be used in naming variables, most of which you can ignore for this class. BUT he does provide a very helpful tool in this post (I have included the <em>link</em> to it in the <strong>Related Resources</strong> section at the end of this lecture as well). It is a <code style={{color: "#cc0487"}}>variable name validator</code>! There are a whole bunch of other really cool validator tools included there which we probably will revisit when appropriate.
     </p>
     <Notes style={{color: "#fff"}}>
-        Got to Mathias' blog post and do a demonstration of how the validator works. <a href="https://mathiasbynens.be/notes/javascript-identifiers-es6" target="_blank">Valid JavaScript variable names in ES2015</a>
+        Go to Mathias' blog post and do a demonstration of how the validator works. <a href="https://mathiasbynens.be/notes/javascript-identifiers-es6" target="_blank">Valid JavaScript variable names in ES2015</a>
     </Notes>
 </div>
 
@@ -144,7 +144,7 @@ export const theme = themes.code;
             Unlike <code style={{color: "#cc0487"}}>var</code>, which is <em>immediately</em> <strong>initialized</strong> to a value, <code style={{color: "#cc0487"}}>let</code> is <em>initialized</em> to a value <strong>only when</strong> a <strong>parser</strong> evaluates it.
         </li>
         <li>
-            Unlike <code style={{color: "#cc0487"}}>var</code>, let does not create properties of the <code style={{color: "#cc0487"}}>Window object</code> when declared <em>globally</em>. We'll be getting into the Window object later in the course. Two such properties are <code style={{color: "#cc0487"}}>localStorage</code> and <code style={{color: "#cc0487"}}>sessionStorage</code>, for example.
+            Unlike <code style={{color: "#cc0487"}}>var</code>, <code style={{color: "#cc0487"}}>let</code> does not create properties of the <code style={{color: "#cc0487"}}>Window object</code> when declared <em>globally</em>. We'll be getting into the <code style={{color: "#cc0487"}}>Window</code> object later in the course. Two such properties are <code style={{color: "#cc0487"}}>localStorage</code> and <code style={{color: "#cc0487"}}>sessionStorage</code>, for example.
         </li>
         <li><code style={{color: "#cc0487"}}>let</code> cannot be re-declared. On the other hand, <code style={{color: "#cc0487"}}>var</code> <a href="https://stackoverflow.com/questions/6888506/redeclaring-a-javascript-variable" target="_blank">can</a>.</li>
     </ol>
@@ -155,7 +155,7 @@ export const theme = themes.code;
 <div style={{width: "90%"}}>
     <h2>Why the keyword name let was chosen</h2>
     <p>
-        The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let" target="_blank">MDN</a> docs on <code style={{color: "#cc0487"}}>let</code> link to an in-depth explanation of the reason the keyword name <code style={{color: "#cc0487"}}>let</code> was chosen. It is on stackoverflow, and states the following:
+        The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let" target="_blank">MDN</a> docs on <code style={{color: "#cc0487"}}>let</code> link to an in-depth explanation of the reason the keyword name <code style={{color: "#cc0487"}}>let</code> was chosen. It is on <code>stackoverflow</code>, and states the following:
     </p>
     <blockquote>
         Let is a mathematical statement that was adopted by early programming languages like Scheme and Basic. Variables are considered low level entities not suitable for higher levels of abstraction, thus the desire of many language designers to introduce similar but more powerful concepts like in Clojure, F#, Scala, where let might mean a value, or a variable that can be assigned, but not changed, which in turn lets the compiler catch more programming errors and optimize code better.<br/>
@@ -181,7 +181,7 @@ export const theme = themes.code;
 <div style={{width: "90%"}}>
     <h2>const Syntax</h2>
     <p>
-        Like <code style={{color: "#cc0487"}}>let</code>, <code style={{color: "#cc0487"}}>const</code> is <code style={{color: "#cc0487"}}>block scoped</code>, can't be changed through re-assignment, and can't be re-declared.
+        Like <code style={{color: "#cc0487"}}>let</code>, <code style={{color: "#cc0487"}}>const</code> is <code style={{color: "#cc0487"}}>block scoped</code>. It also can't be changed through re-assignment (<code style={{color: "#cc0487"}}>let</code> can), and can't be re-declared.
     </p>
     <strong>Syntax:</strong><br/>
     <code style={{color: "#cc0487"}}>const name1 = value1;</code><br/>
@@ -195,13 +195,13 @@ export const theme = themes.code;
     <h2>const in Detail</h2>
     <ol>
         <li>
-            <code>const</code> declaration creates a constant whose scope can be <code style={{color: "#cc0487"}}>global</code> or <code style={{color: "#cc0487"}}>local blocked</code>, depending on where it is placed.
+            <code style={{color: "#cc0487"}}>const</code> declaration creates a constant whose scope can be <code style={{color: "#cc0487"}}>global</code> or <code style={{color: "#cc0487"}}>local blocked</code>, depending on where it is placed.
         </li>
         <li>
-            Global consts do NOT become properties of the Window object, as with <code style={{color: "#cc0487"}}>var</code> variables.
+            Global <code style={{color: "#cc0487"}}>consts</code> do NOT become properties of the <code style={{color: "#cc0487"}}>Window</code> object, as with <code style={{color: "#cc0487"}}>var</code> variables.
         </li>
         <li>
-            An initializer is required when declaring a <code style={{color: "#cc0487"}}>const</code>. In other words, you can't do <code style={{color: "#cc0487"}}>const name; name="Maria";</code>. You have to immediately assign a value to the const <code style={{color: "#cc0487"}}>name</code>. So <code style={{color: "#cc0487"}}>const name = "Maria";</code> instead.
+            An <em>initializer</em> is required when declaring a <code style={{color: "#cc0487"}}>const</code>. In other words, you can't do <code style={{color: "#cc0487"}}>const name; name="Maria";</code>. You have to immediately assign a value to the const <code style={{color: "#cc0487"}}>name</code>. So <code style={{color: "#cc0487"}}>const name = "Maria";</code> instead.
         </li>
         <li>
             <code style={{color: "#cc0487"}}>const</code> declaration is read only. It creates a read-only reference to the value. This does NOT mean that the value which is assigned to it is immutable, unchangeable. It just means that the <code style={{color: "#cc0487"}}>variable identifier</code> <em>cannot be</em> <code style={{color: "#cc0487"}}>re-assigned</code>. The <code style={{color: "#cc0487"}}>value</code> can change, just the <code style={{color: "#cc0487"}}>structure</code> of the value cannot.
