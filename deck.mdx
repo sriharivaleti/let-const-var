@@ -28,6 +28,7 @@ export const theme = themes.code;
     <code style={{color: "#cc0487"}}>var str = 'Hello, world!'</code>
     <p>Syntax:</p>
     <code style={{color: "#cc0487"}}>var name1 = value1</code>
+    <p><code style={{color: "#cc0487"}}>=</code> is called the <code style={{color: "#cc0487"}}>assignment operator</code>. It indicates that the <code style={{color: "#cc0487"}}>value</code> to the <em>right</em> of the <code style={{color: "#cc0487"}}>assignment operator</code> is being <code style={{color: "#cc0487"}}>assigned</code> to the variable <code style={{color: "#cc0487"}}>str</code>.</p>
 </div>
 
 ---
@@ -37,6 +38,21 @@ export const theme = themes.code;
     <p>
         <code style={{color: "#cc0487"}}>var</code> <em>declarations</em>, wherever they occur, are processed before any code is executed. This is called <code style={{color: "#cc0487"}}>hoisting</code>.
     </p>
+<p><code style={{color: "#cc0487"}}>variable hoisting</code>: refers to JavaScript's behavior of <em>moving</em> declarations to the <code>top.</code></p>
+</div>
+
+---
+
+<div style={{width: "90%"}}>
+    <h2>Variable Hoisting: Example 1</h2>
+    <p><code>Example 1</code></p>
+    <pre><code data-javascript noescape>
+x = 20;<br/>
+elem.document.getElementById('demo');<br/>
+elem.innerHTML.x;<br/>
+var x;
+    </code></pre>
+<p>To view examples in action, please visit <a href="w3schools.com/js/js_hoisting.asp">JavaScript Declarations are Hoisted</a> on <strong>W3Schools</strong>.</p>
 </div>
 
 ---
@@ -45,7 +61,7 @@ export const theme = themes.code;
     <h2>Variable Scope</h2>
     <ol>
         <li>
-            A <code>variable</code> is either in the <code style={{color: "#cc0487"}}>local scope</code>, within the body of a function, or in the <code style={{color: "#cc0487"}}>global scope</code>, outside of a function and available everywhere in the application.
+            A <code style={{color: "#cc0487"}}>variable</code> is either in the <code style={{color: "#cc0487"}}>local scope</code>, within the body of a function, or in the <code style={{color: "#cc0487"}}>global scope</code>, outside of a function and available everywhere in the application.
         </li>
         <li>
             Unless you need a variable to be available everywhere in an application, it is always <em>preferrable</em> to <strong>declare</strong> and initialize it in the <code style={{color: "#cc0487"}}>local scope</code>.
@@ -68,24 +84,12 @@ export const theme = themes.code;
 ---
 
 <div style={{width: "90%"}}>
-    <h2>var hoisting</h2>
-    <p>
-        Now I'll give an example of hoisting in the <code style={{color: "#cc0487"}}>JS Playground</code> I have created.
-    </p>
-    <Notes>
-        Show an example of hoisting in playground. Show undefined then declared and assigned and then undefined, declared, and then assigned.
-    </Notes>
-</div>
-
----
-
-<div style={{width: "90%"}}>
     <h2>Explicit Strict Mode</h2>
     <p>
         With <code style={{color: "#cc0487"}}>ES5</code>, which was introduced in <code style={{color: "#cc0487"}}>2009</code>, the concept of <code style={{color: "#cc0487"}}>strict mode</code> was introduced.
     </p>
     <p>
-        <code style={{color: "#cc0487"}}>"strict mode"</code> was introduced in response to JavaScript's <em>lenience</em> and and acceptance of sloppy or incorrect code, such as <em>undeclared</em> <code style={{color: "#cc0487"}}>global variables</code>. It was not recognized by all browsers, however, so <code style={{color: "#cc0487"}}>cross-browser compatibility</code> <em>testing</em> was necessary. On the other hand, <code>normal</code> code and code in <code>strict mode</code> could co-exist, so that was not a problem. These days, even though Javascript is being <code style={{color: "#cc0487"}}>compiled down</code> to <code>ES5</code> for <code style={{color: "#cc0487"}}>cross-browser compatibility</code>, we are already entering <code style={{color: "#cc0487"}}>ECMAScript 2020</code>. Pretty much all developers have embraced <code style={{color: "#cc0487"}}>ECMAScript 2015</code> (ES6) and beyond.
+        <code style={{color: "#cc0487"}}>"strict mode"</code> was introduced in response to JavaScript's <em>lenience</em> and acceptance of sloppy or incorrect code, such as <em>undeclared</em> <code style={{color: "#cc0487"}}>global variables</code>. It was not recognized by all browsers, however, so <code style={{color: "#cc0487"}}>cross-browser compatibility</code> <em>testing</em> was necessary. On the other hand, <code style={{color: "#cc0487"}}>normal</code> code and code in <code style={{color: "#cc0487"}}>strict mode</code> could co-exist, so that was not a problem. These days, even though Javascript is being <code style={{color: "#cc0487"}}>compiled down</code> to <code style={{color: "#cc0487"}}>ES5</code> for <code style={{color: "#cc0487"}}>cross-browser compatibility</code>, we are already entering <code style={{color: "#cc0487"}}>ECMAScript 2020</code>. Pretty much all developers have embraced <code style={{color: "#cc0487"}}>ECMAScript 2015</code> (ES6) and beyond.
     </p>
 </div>
 
@@ -94,7 +98,7 @@ export const theme = themes.code;
 <div style={{width: "90%"}}>
     <h2>let and const</h2>
     <p>
-        In response to <code style={{color: "#cc0487"}}>var</code>'s "sloppiness", <code>ES6</code> introduced <code style={{color: "#cc0487"}}>let</code> and <code style={{color: "#cc0487"}}>const</code>.
+        In response to <code style={{color: "#cc0487"}}>var</code>'s "sloppiness", <code style={{color: "#cc0487"}}>ES6</code> introduced <code style={{color: "#cc0487"}}>let</code> and <code style={{color: "#cc0487"}}>const</code>.
     </p>
 </div>
 
@@ -155,7 +159,7 @@ export const theme = themes.code;
 <div style={{width: "90%"}}>
     <h2>Why the keyword name let was chosen</h2>
     <p>
-        The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let" target="_blank">MDN</a> docs on <code style={{color: "#cc0487"}}>let</code> link to an in-depth explanation of the reason the keyword name <code style={{color: "#cc0487"}}>let</code> was chosen. It is on <code>stackoverflow</code>, and states the following:
+        In the stackoverflow question entitled <a href="https://stackoverflow.com/questions/37916940/why-was-the-name-let-chosen-for-block-scoped-variable-declarations-in-javascri" target="_blank">Why was the name 'let' chosen for block-scoped variable declarations in JavaScript?</a>, on <code style={{color: "#cc0487"}}>let</code>, it goes into an in-depth explanation of the reason the keyword name <code style={{color: "#cc0487"}}>let</code> was chosen. It states the following:
     </p>
     <blockquote>
         Let is a mathematical statement that was adopted by early programming languages like Scheme and Basic. Variables are considered low level entities not suitable for higher levels of abstraction, thus the desire of many language designers to introduce similar but more powerful concepts like in Clojure, F#, Scala, where let might mean a value, or a variable that can be assigned, but not changed, which in turn lets the compiler catch more programming errors and optimize code better.<br/>
@@ -169,7 +173,7 @@ export const theme = themes.code;
 <div style={{width: "90%"}}>
     <h2>const</h2>
     <p>
-        <code style={{color: "#cc0487"}}>const</code> was introduced in <code style={{color: "#cc0487"}}>ES6</code>, and is very different from <code style={{color: "#cc0487"}}>var</code>. <code style={{color: "#cc0487"}}>const</code> works like what its keyword name sounds like. The value assigned to it is <em><strong>read only</strong></em>. It cannot be re-assigned a value as with let and var. <code style={{color: "#cc0487"}}>let</code> and <code style={{color: "#cc0487"}}>var</code> allow you to <em><strong>re-assign</strong></em> <strong>values</strong> to them. <code style={{color: "#cc0487"}}>const</code> does not.
+        <code style={{color: "#cc0487"}}>const</code> was introduced in <code style={{color: "#cc0487"}}>ES6</code>, and is very different from <code style={{color: "#cc0487"}}>var</code>. <code style={{color: "#cc0487"}}>const</code> works like what its keyword name sounds like. The value assigned to it is <em><strong>read only</strong></em>. It cannot be re-assigned a value as with <code style={{color: "#cc0487"}}>let</code> and <code style={{color: "#cc0487"}}>var</code>. <code style={{color: "#cc0487"}}>let</code> and <code style={{color: "#cc0487"}}>var</code> allow you to <em><strong>re-assign</strong></em> <strong>values</strong> to them. <code style={{color: "#cc0487"}}>const</code> does not.
     </p>
     <Notes style={{color: "#fff"}}>
         Show an example of const in action in the playground.
@@ -181,7 +185,7 @@ export const theme = themes.code;
 <div style={{width: "90%"}}>
     <h2>const Syntax</h2>
     <p>
-        Like <code style={{color: "#cc0487"}}>let</code>, <code style={{color: "#cc0487"}}>const</code> is <code style={{color: "#cc0487"}}>block scoped</code>. It also can't be changed through re-assignment (<code style={{color: "#cc0487"}}>let</code> can), and can't be re-declared.
+        Like <code style={{color: "#cc0487"}}>let</code>, <code style={{color: "#cc0487"}}>const</code> is <code style={{color: "#cc0487"}}>block scoped</code>. It also can't be changed through re-assignment (<code style={{color: "#cc0487"}}>let</code> can), and can't be re-declared. <code style={{color: "#cc0487"}}>let</code> also cannot be re-declared.
     </p>
     <strong>Syntax:</strong><br/>
     <code style={{color: "#cc0487"}}>const name1 = value1;</code><br/>
@@ -239,5 +243,8 @@ export const theme = themes.code;
             <a href="https://stackoverflow.com/questions/37916940/why-was-the-name-let-chosen-for-block-scoped-variable-declarations-in-javascri">Why was the name 'let' chosen for block-scoped variable declarations in JavaScript?</a>: <strong>stackoverflow</strong>
         </li>
         <li><a href="https://stackoverflow.com/questions/6888506/redeclaring-a-javascript-variable">Redeclaring a javascript variable</a>: <strong>stackoverflow</strong></li>
+        <li>
+            <a href="https://www.w3schools.com/js/js_hoisting.asp">JavaScript Hoisting</a>: <strong>W#Schools</strong>
+        </li>
     </ul>
 </div>
